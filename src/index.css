@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+button{
+  background-image: linear-gradient(to right, #7E90FE, #9873FF);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.3s;
+}
+button:hover{
+  filter: drop-shadow(0 3px 3px #7e8ffe3d) drop-shadow(0 3px 3px #9873ff3a);;
+}
+.gradient-color{
+  background-image: linear-gradient(to right, #7E90FE, #9873FF);
+    background-clip: text;
+    color: transparent;
+}
