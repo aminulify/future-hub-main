@@ -10,6 +10,18 @@
     line-height: 50px;
     margin-bottom: 10px;
 }
+.section-header{
+    position: relative;
+}
+.section-bottom{
+    position: absolute;
+    bottom: 0px;
+    z-index: -1;
+}
+.section-bottom img{
+    width: 70%;
+}
+
 @media screen and (max-width: 780px) {
     .header-main{
         flex-direction: column-reverse;
@@ -18,6 +30,12 @@
     .heading{
         font-size: 32px;
         line-height: 40px;
+    }
+    .section-bottom{
+        bottom: -30px;
+    }
+    .section-bottom img{
+        width: 60%;
     }
     
 }
