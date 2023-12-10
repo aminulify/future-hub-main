@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import JobCategory from '../JobCategory/JobCategory';
 
 const Home = () => {
     return (
@@ -15,6 +16,8 @@ const Home = () => {
                 </div>
             </main>
             <hr className='text-slate-600 border' />
+
+            <JobCategory></JobCategory>
         </div>
     );
 };
