@@ -8,6 +8,7 @@ import {
 import Header from './Header/Header';
 import ErrorElement from './errorElement/ErrorElement';
 import Home from './Home/Home';
+import FeatureJobs from './FeatureJobs/FeatureJobs';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('jobs.json')
       },
       {
         path:'*',

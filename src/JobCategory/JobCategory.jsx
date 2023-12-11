@@ -3,9 +3,9 @@ import './JobCategory.css';
 
 const JobCategory = () => {
     return (
-        <div className='m-20'>
+        <div className='m-12 lg:md-16'>
             <h1 className='mb-2 text-3xl font-bold text-slate-700 text-center'>Job Category List</h1>
-            <p className='text-slate-600 text-sm text-center mb-10'>Explore thousands of job opportunities with all the information you need. Its your future</p>
+            <p className='text-slate-600 text-sm text-center mb-10 lg:mx-80'>Explore thousands of job opportunities with all the information you need. Its your future</p>
             <main className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-center gap-10'>
                 <div className='jobsCategory-section'>
                     <img src="accounts.png" alt="accounts-icon" className='jobs-icon' />

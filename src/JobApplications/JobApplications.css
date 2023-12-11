@@ -1,0 +1,16 @@
+.logo-img{
+    width: 30%;
+}
+.job-style-btn{
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #7E90FE;
+    border-radius: 2px;
+}
+.job-section{
+    background-color: white;
+    transition: all 0.5s;
+}
+.job-section:hover{
+    filter: drop-shadow(3px 3px 5px #7e8ffe2f);
+}

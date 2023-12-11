@@ -2,8 +2,13 @@ import React from 'react';
 import './Home.css';
 import JobCategory from '../JobCategory/JobCategory';
 import Footer from '../Footer/Footer';
+import FeatureJobs from '../FeatureJobs/FeatureJobs';
+import { useLoaderData } from 'react-router-dom';
+import JobApplications from '../JobApplications/JobApplications';
 
 const Home = () => {
+    const items = useLoaderData();
+
     return (
         <div id='/'>
             <section className='section-header'>
@@ -24,6 +29,18 @@ const Home = () => {
             <hr className='text-slate-600 border' />
 
             <JobCategory></JobCategory>
+            <FeatureJobs></FeatureJobs>
+            <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-6 mx-12 lg:mx-16'>
+            {
+                items.map(item => <JobApplications
+                    key={item.id}
+                    item = {item}
+                ></JobApplications>)
+            }
+            </div>
+            <div className='text-center'>
+            <button className='my-10'>See More</button>
+            </div>
             <Footer></Footer>
         </div>
     );
