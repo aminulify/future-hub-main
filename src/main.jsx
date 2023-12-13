@@ -9,6 +9,7 @@ import Header from './Header/Header';
 import ErrorElement from './errorElement/ErrorElement';
 import Home from './Home/Home';
 import FeatureJobs from './FeatureJobs/FeatureJobs';
+import JobDetails from './JobDetails/JobDetails';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('jobs.json')
+        loader: () => fetch('jobs.json'),
+      },
+      {      
+          path: '/:id',
+          element: <JobDetails></JobDetails> ,
+          loader: () => fetch('jobs.json'),  
       },
       {
         path:'*',

@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { Component, createContext, useEffect, useState } from 'react';
 import './JobApplications.css';
+import { Link } from 'react-router-dom';
+import JobDetails from '../JobDetails/JobDetails';
 
-const JobApplications = ({item}) => {
-    console.log(item);
-    const {logo, company_name, job_title, remote_or_onsite, job_type, location, salary} = item;
+
+const JobApplications = ({item, showJobDetails}) => {
+    // console.log(item);
+    const {id, logo, company_name, job_title, remote_or_onsite, job_type, location, salary} = item;
+    const [items, setItems] = useState();
+    useEffect(()=>{
+        const details = item;
+        setItems(details);
+    },[]);
+    // console.log(items);
     return (
         <div className='p-8 border rounded-e-md job-section'>
             <div className='logo-img mb-3'>
@@ -19,7 +28,8 @@ const JobApplications = ({item}) => {
             <p className='flex gap-1 items-center mb-3 lg:mb-0 md:mb-0'><img src="location2.png" alt="location-icon" />{location}</p>
             <p className='flex gap-1 items-center'><img src="money.png" alt="money-icon" />{salary}</p>
             </div>
-            <button className='mt-4'>View Details</button>
+                <Link onClick={()=>showJobDetails(item)} to={`/${id}`} ><button className='mt-4'>View Details</button></Link>
+                
         </div>
     );
 };

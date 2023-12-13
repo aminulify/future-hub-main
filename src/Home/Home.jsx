@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import JobCategory from '../JobCategory/JobCategory';
 import Footer from '../Footer/Footer';
@@ -8,6 +8,11 @@ import JobApplications from '../JobApplications/JobApplications';
 
 const Home = () => {
     const items = useLoaderData();
+    const [seeMore, setSeeMore] = useState(false);
+
+    const showJobDetails = id =>{
+        console.log(id);
+    }
 
     return (
         <div id='/'>
@@ -32,14 +37,19 @@ const Home = () => {
             <FeatureJobs></FeatureJobs>
             <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-6 mx-12 lg:mx-16'>
             {
-                items.map(item => <JobApplications
+                seeMore ? items.map(item => <JobApplications
                     key={item.id}
                     item = {item}
+                    showJobDetails = {showJobDetails}
+                ></JobApplications>) : items.slice(0,4).map(item => <JobApplications
+                    key={item.id}
+                    item = {item}
+                    showJobDetails = {showJobDetails}
                 ></JobApplications>)
             }
             </div>
             <div className='text-center'>
-            <button className='my-10'>See More</button>
+            <button onClick={()=>setSeeMore(!seeMore)} className='my-10'>{(seeMore ? "See Less" : "See More")}</button>
             </div>
             <Footer></Footer>
         </div>

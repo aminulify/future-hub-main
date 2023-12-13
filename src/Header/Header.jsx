@@ -5,7 +5,7 @@ import { Link, Outlet } from 'react-router-dom';
 const Header = () => {
     const [menuOpen,setMenuOpen] = useState(false);
     return (
-        <div className=''>
+        <div className='header-section'>
             <aside className='flex items-center justify-between mx-10 my-4 short-nav-bar'>
                 <div>
                 <a href='/' className='text-2xl font-bold gradient-color'>FutureHub</a> 

@@ -28,6 +28,7 @@ i{
     cursor: pointer;
 }
 @media screen and (max-width: 780px) {
+    
     .short-nav-bar{
         display: flex;
     }
