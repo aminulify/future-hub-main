@@ -1,42 +1,40 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
 import './JobDetails.css';
 import Footer from '../Footer/Footer';
+import OtherHeaders from '../OtherHeaders/OtherHeaders';
 const JobDetails = () => {
 
-    const path = window.location.pathname;
-    const windowPath = parseInt(path.slice(1,2));
+    // const path = window.location.pathname;
+    // const windowPath = parseInt(path.slice(1,2));
     // console.log(parseInt(path.slice(1,2)));
-
+    const {id} = useParams();
+    // console.log(id); 
     const jobDetails = useLoaderData();
-    let target;
-    jobDetails.forEach((el, index) => {
-        if(el.id===windowPath){
-            target=el;
-        }
+    console.log(jobDetails);
+    const details = jobDetails.filter(d => d.id == id);
+    console.log(details);
+    // let details[0];
+    // jobDetails.forEach((el, index) => {
+    //     if(el.id===windowPath){
+    //         details[0]=el;
+    //     }
         
-    })
-    console.log(target);
+    // })
+    // console.log(details[0]);
     
     return (
+
         <div>          
-            <section className="viewJobTop relative top-0">
-                <div className='absolute top-0 right-0'>
-                    <img src="bg2.png" alt="" />
-                </div>
-                <h1 className='font-bold text-3xl relative top-1/2 flex justify-center text-slate-700'>Job Details</h1>
-                <div className='absolute bottom-0 left-0'>
-                    <img src="bg1.png" alt="" />
-                
-                </div>
-            </section>
+            <OtherHeaders><h1 className='font-bold text-3xl relative top-1/2 flex justify-center text-slate-700'>Job Details</h1></OtherHeaders>
+
             <main className='mx-12 lg:mx-28 md:mx-10 my-16 view-job-main'>
                 <section className='view-job-left-side'>
-                    <h1 className='font-semibold text-3xl text-slate-300'>{target.company_name}</h1>
-                    <h3 className='text-slate-700'>Job Description: <span>{target.job_description}</span></h3>
-                    <h3 className='text-slate-700'>Job Responsibility: <span>{target.job_responsibility}</span></h3>
-                    <h3 className='text-slate-700'>Educational Requirements: <p>{target.educational_requirements}</p></h3>
-                    <h3 className='text-slate-700'>Experiences: <p>{target.experiences}</p></h3>
+                    <h1 className='font-semibold text-3xl text-slate-300'>{details[0].company_name}</h1>
+                    <h3 className='text-slate-700'>Job Description: <span>{details[0].job_description}</span></h3>
+                    <h3 className='text-slate-700'>Job Responsibility: <span>{details[0].job_responsibility}</span></h3>
+                    <h3 className='text-slate-700'>Educational Requirements: <p>{details[0].educational_requirements}</p></h3>
+                    <h3 className='text-slate-700'>Experiences: <p>{details[0].experiences}</p></h3>
                 </section>
 
                 <section>
@@ -47,11 +45,11 @@ const JobDetails = () => {
                         <div className='job-details-paragraph'>
                             <div className='flex gap-1 items-center'>
                                 <img src="money.png" alt="" />
-                                <h4>Salary: <span>{`${target.salary} (Per Annum)`}</span></h4>
+                                <h4>Salary: <span>{`${details[0].salary} (Per Annum)`}</span></h4>
                             </div>
                             <div className='flex gap-1 items-center mt-2 mb-4'>
                                 <img src="calendar.png" alt="" />
-                                <h4>Job Title: <span>{target.job_title}</span></h4>
+                                <h4>Job Title: <span>{details[0].job_title}</span></h4>
                             </div>
                         </div>
 

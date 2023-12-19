@@ -1,0 +1,17 @@
+.viewJobTop{
+    height: 300px;
+    background-color: #7e8ffe0d;
+    z-index: -120;
+}
+.viewJobTop img{
+    z-index: -100;
+    width: 90%;
+}
+@media screen and (max-width: 780px) {
+    .viewJobTop img{
+        width: 90%;
+    }
+    .viewJobTop div:nth-child(1) img{
+        position: fixed;
+    }
+}

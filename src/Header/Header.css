@@ -27,6 +27,10 @@ header{
 i{
     cursor: pointer;
 }
+.snipper{
+    display: flex;
+    justify-content: center;
+}
 @media screen and (max-width: 780px) {
     
     .short-nav-bar{

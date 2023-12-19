@@ -28,7 +28,7 @@ const JobApplications = ({item, showJobDetails}) => {
             <p className='flex gap-1 items-center mb-3 lg:mb-0 md:mb-0'><img src="location2.png" alt="location-icon" />{location}</p>
             <p className='flex gap-1 items-center'><img src="money.png" alt="money-icon" />{salary}</p>
             </div>
-                <Link onClick={()=>showJobDetails(item)} to={`/${id}`} ><button className='mt-4'>View Details</button></Link>
+                <Link onClick={()=>showJobDetails(item)} to={`/${id}`}><button className='mt-4'>View Details</button></Link>
                 
         </div>
     );

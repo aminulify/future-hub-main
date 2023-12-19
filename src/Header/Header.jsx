@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 import './Header.css';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigation } from 'react-router-dom';
+import Snipper from '../Snipper/Snipper';
 
 const Header = () => {
+    // snipper 
+    const navigation = useNavigation();
+
     const [menuOpen,setMenuOpen] = useState(false);
     return (
-        <div className='header-section'>
+        <section>
+            {/* navigation  */}
+            <div className='snipper'>
+            {
+                navigation.state==='loading'? <Snipper></Snipper> : ''
+            }
+            </div>
+            <div className='header-section'>
             <aside className='flex items-center justify-between mx-10 my-4 short-nav-bar'>
                 <div>
                 <a href='/' className='text-2xl font-bold gradient-color'>FutureHub</a> 
@@ -30,6 +41,7 @@ const Header = () => {
             </header>
             <Outlet></Outlet>
         </div>
+        </section>
     );
 };
 
