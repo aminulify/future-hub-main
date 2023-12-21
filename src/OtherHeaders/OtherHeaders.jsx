@@ -8,7 +8,9 @@ const OtherHeaders = ({children}) => {
                 <div className='absolute top-0 right-0'>
                     <img src="bg2.png" alt="" />
                 </div>
+
                 {children}
+                
                 <div className='absolute bottom-0 left-0'>
                     <img src="bg1.png" alt="" />
                 

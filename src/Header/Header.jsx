@@ -33,7 +33,7 @@ const Header = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/applied_jobs">Applied Jobs</Link></li>
                     <li><Link to="/statistics">Statistics</Link></li>
-                    <li><Link to="/blog">Blog</Link></li>
+                    <li><Link to="/blogs">Blogs</Link></li>
                 </div>
                 <div>
                     <button className='header-btn'>Start Applying <i class="fa-solid fa-arrow-right"></i></button>

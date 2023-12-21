@@ -1,0 +1,9 @@
+@media screen and (max-width: 780px){
+    BarChart{
+        width: 100px !important;
+        height: 100px ;
+    }
+}
+BarChart{
+    width: 50%;
+}

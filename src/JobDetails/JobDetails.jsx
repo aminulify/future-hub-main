@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import './JobDetails.css';
 import Footer from '../Footer/Footer';
 import OtherHeaders from '../OtherHeaders/OtherHeaders';
+import { addToDb } from '../../utilities/fakedb';
 const JobDetails = () => {
 
     // const path = window.location.pathname;
@@ -14,6 +15,11 @@ const JobDetails = () => {
     console.log(jobDetails);
     const details = jobDetails.filter(d => d.id == id);
     console.log(details);
+
+    const appliedJob = (id) =>{
+        addToDb(id);
+        console.log(id);
+    }
     // let details[0];
     // jobDetails.forEach((el, index) => {
     //     if(el.id===windowPath){
@@ -71,7 +77,7 @@ const JobDetails = () => {
                             </div>
                         </div>
                     </aside>
-                    <button className='w-full mt-3'>Apply Now</button>
+                    <button onClick={()=>appliedJob(id)} className='w-full mt-3'>Apply Now</button>
                 </section>
             </main>
             <Footer></Footer>

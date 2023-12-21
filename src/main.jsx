@@ -12,6 +12,7 @@ import JobDetails from './JobDetails/JobDetails';
 import Statistic from './Statistic/Statistic';
 import AppliedJobs from './AppliedJobs/AppliedJobs';
 import HomeGetStartedBtn from './HomeGetStartedBtn/HomeGetStartedBtn';
+import Blog from './Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
       {      
           path: '/:id',
           element: <JobDetails></JobDetails> ,
-          loader: () => fetch('jobs.json'),  
+          loader: () => fetch('jobs.json'), 
+          errorElement: <ErrorElement></ErrorElement> 
       },
       {
         path: 'statistics',
@@ -35,18 +37,24 @@ const router = createBrowserRouter([
       },
       {
         path: 'applied_jobs',
-        element: <AppliedJobs></AppliedJobs>
+        element: <AppliedJobs></AppliedJobs>,
+        loader: ()=> fetch('jobs.json')
       },
       {
         path: 'job_section',
         element: <HomeGetStartedBtn></HomeGetStartedBtn>,
-        loader: () => fetch('jobs.json'),
+        loader: () => fetch('jobs.json')
+      },
+      {
+        path: 'blogs',
+        element: <Blog></Blog>
       },
       {
         path:'*',
         element: <ErrorElement></ErrorElement>
       }
-    ]
+    ],
+    // errorElement: <ErrorElement></ErrorElement>
   },
   {
     path: '*',

@@ -1,0 +1,12 @@
+.job-logo{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(239, 239, 239, 0.388);
+}
+@media screen and (max-width: 870px) {
+    .job-logo{
+        width: 100%;
+    }
+}
