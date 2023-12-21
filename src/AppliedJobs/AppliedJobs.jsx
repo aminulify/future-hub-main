@@ -5,33 +5,33 @@ import { useLoaderData } from 'react-router-dom';
 
 import AppliedShowing from '../AppliedShowing/AppliedShowing';
 import { getShoppingCart } from '../../utilities/fakedb';
+import Footer from '../Footer/Footer';
 
 
 const AppliedJobs = () => {   
-    const [jobs, setJobs] = useState([]);  
+    
     const [appliedJobs, setAppliedJobs] = useState([]);
     const getDataFromJson = useLoaderData();
-
+    const [jobs, setJobs] = useState([]);  
+    
     useEffect(()=>{
         setJobs(getDataFromJson);
-
     },[])
     // console.log(jobs);
-
-    useEffect(()=>{
+    useEffect(()=>{   
         const storedData = getShoppingCart();
-        // console.log(storedData);
+        console.log(storedData);
         let addedData = [];
 
         for(let id in storedData){
-            // console.log(idValue);
-            const data = jobs.filter(job=> job.id == id);
+             const data = jobs.filter(job=> job.id == id);
+            //  console.log(data);
             addedData.push(data);       
         }
-        // console.log(addedData);
+        console.log(addedData);
         setAppliedJobs(addedData);
-    },[])
-    // console.log(appliedJobs);
+    },[jobs])
+    console.log(appliedJobs);
     return (
         <div>
             <OtherHeaders>
@@ -48,7 +48,7 @@ const AppliedJobs = () => {
                 
             }
             
-        
+        <Footer></Footer>
         </div>
     );
 };

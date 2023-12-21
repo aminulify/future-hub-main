@@ -12,9 +12,9 @@ const JobDetails = () => {
     const {id} = useParams();
     // console.log(id); 
     const jobDetails = useLoaderData();
-    console.log(jobDetails);
+    // console.log(jobDetails);
     const details = jobDetails.filter(d => d.id == id);
-    console.log(details);
+    // console.log(details);
 
     const appliedJob = (id) =>{
         addToDb(id);

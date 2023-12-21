@@ -18,6 +18,9 @@ button{
 button:hover{
   filter: drop-shadow(0 3px 3px #7e8ffe3d) drop-shadow(0 3px 3px #9873ff3a);;
 }
+button:active{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.749), rgba(0, 0, 0, 0.772));
+}
 .gradient-color{
   background-image: linear-gradient(to right, #7E90FE, #9873FF);
     background-clip: text;
