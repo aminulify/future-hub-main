@@ -4,6 +4,16 @@ import './JobDetails.css';
 import Footer from '../Footer/Footer';
 import OtherHeaders from '../OtherHeaders/OtherHeaders';
 import { addToDb } from '../../utilities/fakedb';
+// toast 
+import toast, { Toaster } from 'react-hot-toast';
+const notify = () => toast("Submit Done",{
+    style: {
+        background: '#1dbf02',
+        color: 'white',
+        fontWeight: '400'
+    }
+});
+
 const JobDetails = () => {
 
     // const path = window.location.pathname;
@@ -77,7 +87,10 @@ const JobDetails = () => {
                             </div>
                         </div>
                     </aside>
-                    <button onClick={()=>appliedJob(id)} className='w-full mt-3'>Apply Now</button>
+                    <div onClick={notify}>
+                        <button onClick={()=>appliedJob(id)} className='w-full mt-3'>Apply Now</button>
+                        <Toaster></Toaster>
+                    </div>
                 </section>
             </main>
             <Footer></Footer>

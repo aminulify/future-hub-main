@@ -1,5 +1,6 @@
 import React from 'react';
 import './AppliedShowing.css';
+import { Link } from 'react-router-dom';
 
 const AppliedShowing = ({jobApp}) => {
     // console.log(jobApp);
@@ -24,7 +25,7 @@ const AppliedShowing = ({jobApp}) => {
 
             </aside>
             <aside className='mt-4 md:mt-0 lg:mt-0'>
-                <button>View Details</button>
+                <Link to={`/${jobApp?.id}`}><button className='mt-4'>View Details</button></Link>
             </aside>
         </div>
     );
