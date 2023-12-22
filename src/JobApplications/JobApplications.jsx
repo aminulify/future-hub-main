@@ -3,7 +3,6 @@ import './JobApplications.css';
 import { Link } from 'react-router-dom';
 import JobDetails from '../JobDetails/JobDetails';
 
-
 const JobApplications = ({item, showJobDetails}) => {
     // console.log(item);
     const {id, logo, company_name, job_title, remote_or_onsite, job_type, location, salary} = item;

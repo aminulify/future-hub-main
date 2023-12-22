@@ -40,8 +40,8 @@ const AppliedJobs = () => {
 
             {/* applied job  */}
             {
-                appliedJobs.map(jobApp => <AppliedShowing
-                    key={jobApp[0].id}
+                appliedJobs?.map(jobApp => <AppliedShowing
+                    key={jobApp[0]?.id}
                     jobApp = {jobApp[0]}
                 ></AppliedShowing>)
                 // appliedJobs.map(jobApp => console.log(jobApp[0].id))
