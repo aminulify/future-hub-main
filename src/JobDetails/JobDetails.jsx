@@ -33,12 +33,12 @@ const JobDetails = () => {
     const details = jobDetails.filter(d => d.id == id);
     // console.log(details);
 
-    const [submit, setSubmit] = useState(false);
+    const [submit, setSubmit] = useState(true);
     const appliedJob = (id) =>{
         addToDb(id);
         const exist = jobDetails.find(d=> d.id == id);
         if(exist){
-            setSubmit(!submit)
+            setSubmit(false)
         }
        
         console.log(id);
