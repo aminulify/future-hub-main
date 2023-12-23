@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './AppliedJobs.css';
 import OtherHeaders from '../OtherHeaders/OtherHeaders';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData} from 'react-router-dom';
 
 import AppliedShowing from '../AppliedShowing/AppliedShowing';
 import { getShoppingCart } from '../../utilities/fakedb';
@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 
 
 const AppliedJobs = () => {   
+    // applied jobs snipper 
     
     const [appliedJobs, setAppliedJobs] = useState([]);
     const getDataFromJson = useLoaderData();

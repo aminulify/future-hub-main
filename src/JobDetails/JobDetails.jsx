@@ -13,6 +13,13 @@ const notify = () => toast("Submit Done",{
         fontWeight: '400'
     }
 });
+const notified = () => toast("Already Submitted",{
+    style: {
+        background: '#1dbf02',
+        color: 'white',
+        fontWeight: '400'
+    }
+});
 
 const JobDetails = () => {
 
@@ -26,8 +33,14 @@ const JobDetails = () => {
     const details = jobDetails.filter(d => d.id == id);
     // console.log(details);
 
+    const [submit, setSubmit] = useState(false);
     const appliedJob = (id) =>{
         addToDb(id);
+        const exist = jobDetails.find(d=> d.id == id);
+        if(exist){
+            setSubmit(!submit)
+        }
+       
         console.log(id);
     }
     // let details[0];
@@ -87,10 +100,12 @@ const JobDetails = () => {
                             </div>
                         </div>
                     </aside>
-                    <div onClick={notify}>
-                        <button onClick={()=>appliedJob(id)} className='w-full mt-3'>Apply Now</button>
-                        <Toaster></Toaster>
-                    </div>
+                    
+                        <div onClick={()=>appliedJob(id)}>
+                            <button onClick={submit ? ()=>notify(id): ()=> notified(id)} className='w-full mt-3'>Apply Now</button>
+                            <Toaster></Toaster>
+                        </div>
+                    
                 </section>
             </main>
             <Footer></Footer>
