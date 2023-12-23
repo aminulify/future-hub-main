@@ -12,4 +12,4 @@
 <b>Live Link: <a href="https://quiet-froyo-954e47.netlify.app/">Live Link</a><b>
 
 <br>
-<img src="url-cover.JPG" alt="website demo image">
+<img src="url-cover.png" alt="website demo image">
